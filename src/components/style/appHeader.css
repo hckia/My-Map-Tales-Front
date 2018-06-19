@@ -1,0 +1,13 @@
+.header-container{
+	border: 1px solid black;
+	
+}
+.app-header {
+	text-align: left;
+	display: inline-block;
+	width: 30vw;
+}
+
+a {
+	padding: 5px;
+}

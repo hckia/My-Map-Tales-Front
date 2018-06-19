@@ -1,0 +1,7 @@
+.description-container {
+	float: right;
+	display: inline-block;
+	width: 67vw;
+	height: 80vh;
+	border: 1px solid black;
+}

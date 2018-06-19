@@ -1,0 +1,7 @@
+.login-container{
+	float: right;
+	display: inline-block;
+	width: 68.6vw;
+	/*height: 80vh;*/
+	border: 1px solid black;
+}

@@ -1,0 +1,9 @@
+.search-bar {
+	display: inline-block;
+	width: 48vw;
+}
+
+input {
+	float: left;
+	width: 60%;
+}
