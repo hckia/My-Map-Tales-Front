@@ -1,11 +1,33 @@
-* {
+/** {
+  box-sizing: border-box;
+}
+*/
+
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
+html,
 body {
-  margin: 0;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+/*  margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: sans-serif;*/
+  font: 16px 'Roboto', Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: #f6f6f6;
 }
 
 /*.app-container {

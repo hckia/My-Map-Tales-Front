@@ -1,13 +1,14 @@
 .header-container{
+	z-index: 1;
+	height: 100px;
+	width: 100%;
+	position: fixed;
 	border: 1px solid black;
-	
+	background:#6cf;
 }
 .app-header {
 	text-align: left;
 	display: inline-block;
-	width: 30vw;
-}
-
-a {
-	padding: 5px;
+	width: 30vw; 
+	/*may want to remove this vw*/
 }

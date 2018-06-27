@@ -1,6 +1,13 @@
 .menu-container {
+	top: 100px;
+	/*overflow: scroll;*/
+	position: fixed;
 	display: inline-block;
 	width: 30vw;
-	height: 80vh;
-	border: 1px solid black;
+	/*height: 100vh;*/
+	z-index: 1;
+	/*background:#6cf;*/
 }
+/* 
+
+going to need media queries*/

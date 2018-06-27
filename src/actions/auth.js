@@ -100,3 +100,11 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             clearAuthToken(authToken);
         });
 };
+
+export const logout = () => (dispatch, getState) => {
+    dispatch(clearAuth());
+    console.log("logout auth file");
+    const authToken = getState().auth.authToken;
+    console.log(authToken);
+    clearAuthToken(authToken); 
+}

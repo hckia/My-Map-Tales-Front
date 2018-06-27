@@ -1,0 +1,9 @@
+.footer-container {
+	position: fixed;
+	bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+    /*margin: .5rem 1rem;*/
+   background:#6cf;
+}

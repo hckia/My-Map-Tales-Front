@@ -6,11 +6,11 @@ var latLon;
 
 export default class Map extends Component {
 	componentDidMount(){
-		//var latLon;
+		var latLon;
 		console.log('location ', this.props.location.replace(/\s/g, "+"));
 		//console.log('lat ', this.props.lat, 'lon ', this.props.lon);
 		this.latLon = this.loadMap(this.props.location.replace(/\s/g, "+"));
-		console.log('LatLon: ',latLon);
+		//console.log('LatLon: ',latLon);
 	}
 
 	loadMap(location){
