@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import MyMapTalesDescription from './components/myMapTalesDescription';
 import Dashboard from './components/dashboard';
+import StoryPage from './components/storyPage';
 import CreateStory from './components/createStory';
 import Login from './components/login';
 import SignUp from './components/signUp';
@@ -17,7 +18,7 @@ import { loadAuthToken } from './reducers/local-storage';
 // <Provider store={createStoreWithMiddleware(reducers)}>
 
 
-// Below is an alternative method for ensuring the user is logged in. It is used on the Login component as an alternative example to the way the signup component checks if the user is logged in. 
+// Below is an alternative method for ensuring the user is logged in. It is used on the Login component as an alternative example to the way the signup component checks if the user is logged in.
 //In that instance, the sign up form is a nested component to signup, allowing us to connect and map the state of our authenticating to the loggedIn checker.
 
 //should probably put PrivateRoute in its own directory.
@@ -49,16 +50,17 @@ ReactDOM.render(
 				<Route path="/dashboard" component={Dashboard}/>
 				<Route path="/create" component={CreateStory}/>
 				<PrivateRoute path="/login" component={Login} />
+        <Route path="/story/:story" component={StoryPage} />
 				<Route path="/signup" component={SignUp}/>
 				<Route path="/" component={MyMapTalesDescription}/>
 			</Switch>
 	      </div>
 		</Router>
-	</Provider>, 
+	</Provider>,
 	document.getElementById('root')
 	);
 
-/* 
+/*
 			<AppHeader term="" />
 			<Menu />
 			<AppFooter />

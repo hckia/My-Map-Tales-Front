@@ -1,9 +1,18 @@
 .login-container{
-	margin: 150px 0 150px 0;
-	float: right;
+	margin: 20vh 20vw 20vh 20vw;
 	display: inline-block;
-	/*right: 0;*/
-	width: 67vw;
-	/*height: 80vh;*/
-	border: 1px solid black;
+	width: 50vw;
+}
+/*design for 1024 */
+@media screen and (min-width: 1024px) {
+
+}
+
+/*design for 420 */
+@media screen and (max-width: 1024px) and (min-width: 420px) {
+
+}
+
+@media screen and (max-width: 400px){
+
 }

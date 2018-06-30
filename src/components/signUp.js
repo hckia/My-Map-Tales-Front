@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import RegistrationForm from './registration-form';
 import AppHeader from './appHeader';
-import Menu from './menu';
 import AppFooter from './appFooter';
 
 export function SignUp(props) {
@@ -16,9 +15,8 @@ export function SignUp(props) {
     return (
         <div>
         <AppHeader term="" parentComp="form" />
-        <Menu />
         <div className="signup-container">
-            <h2>Register for Foo App</h2>
+            <h2>Sign up for My Map Tales</h2>
             <RegistrationForm />
         </div>
         <AppFooter />

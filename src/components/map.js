@@ -7,7 +7,7 @@ var latLon;
 export default class Map extends Component {
 	componentDidMount(){
 		var latLon;
-		console.log('location ', this.props.location.replace(/\s/g, "+"));
+		//console.log('location ', this.props.location.replace(/\s/g, "+"));
 		//console.log('lat ', this.props.lat, 'lon ', this.props.lon);
 		this.latLon = this.loadMap(this.props.location.replace(/\s/g, "+"));
 		//console.log('LatLon: ',latLon);
@@ -31,19 +31,21 @@ export default class Map extends Component {
 	        })
 	        .catch(err =>
 	           console.log(err)
+						 //if catch is thrown here - Create a map with the coordinates to Bermuda(sp??) Triangle.
+						 //add Modal Box here telling the user to add a valid location. This would exist under the create story form
 	        );
 	}
 
 	render(){
 		return (
-			<div ref='map' name={this.props.location} style={{height: '50vh', width: '50vw'}}>
+			<div ref='map' name={this.props.location} style={{height: '100%', width: '100%', float: 'left'}}>
 				Map
 			</div>
 		);
 	}
 }
 
-/* 
+/*
 Add marker to map
 potentially add custom markers when telling their story
 */

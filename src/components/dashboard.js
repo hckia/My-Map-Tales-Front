@@ -6,15 +6,11 @@ import requiresLogin from './requires-login';
 import { fetchStories } from '../actions';
 import Map from './map';
 import AppHeader from './appHeader';
-import Menu from './menu';
 import AppFooter from './appFooter';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
     componentDidMount(){
-        // This Component lifecycle method will run after a component is rendered on the screen
-        // this is an asynchronus operation.
-        // if you want to fetch data before the component renders, you can use another lifecycle
-        // method called componentWillMount
         // console.log(JSON.stringify(this.props.fetchStories()))
         this.props.fetchStories();
     }
@@ -22,25 +18,33 @@ class Dashboard extends Component {
     renderStories() {
         var leCount = 0;
         return _.map(this.props.stories, story => {
+          //console.log(story);
             return (
-                <div className="list-group-item" key={story._id} name={story.id}>
-                    <h2>{story.title}</h2>
-                    <h3>Location: {story.location}</h3>
-                    <p>Story Teller: {story.author}</p>
-                    <p>Date: {story.date}</p>
+                <Link to="story" params={story} key={story._id} name={story._id}><div className="list-group-item">
+                  <div className="left-container">
                     <Map location={story.location}/>
-                    <p>{story.body}</p>
-                </div>
+                  </div>
+                  <div className="right-container">
+                    <h2>{story.title}</h2>
+                    <p>Story Teller: {story.author}</p>
+                    <h3>Location: {story.location}</h3>
+                    <p>Date: {story.date}</p>
+                  </div>
+                  <div id="story-description">
+                    <p>{story.description}</p>
+                  </div>
+                </div></Link>
             );
         });
     }
+
 
     render(){
         return (
                 <div>
                     <AppHeader term="" parentComp="story" />
                     <div className="dashboard-container">
-                        <h3>Stories</h3>
+                        <h2>Stories</h2>
                         <ul onChange={this.renderStories}>
                             {this.renderStories()}
                         </ul>

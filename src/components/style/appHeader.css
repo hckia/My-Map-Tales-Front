@@ -7,8 +7,9 @@
 	background:#6cf;
 }
 .app-header {
+	padding: 10px;
+	font-size: 24px;
 	text-align: left;
 	display: inline-block;
-	width: 30vw; 
-	/*may want to remove this vw*/
+	width: 30vw;
 }

@@ -25,27 +25,27 @@ class Nav extends Component{
 render(){
 	if(!this.props.loggedIn){
 		return(
-		<div className="nav-container">
-			<Link to="/login">Login</Link>
-			<Link to="/signup">Signup</Link>
-		</div>
+		<ul className="nav-container">
+			<li><Link to="/login">Login</Link></li>
+			<li><Link to="/signup">Signup</Link></li>
+		</ul>
 		);
 	}
     else if(this.state.logOutClicked){
     	return(
-		<div className="nav-container">
-			<Link to="/login">Login</Link>
-			<Link to="/signup">Signup</Link>
+		<ul className="nav-container">
+			<li><Link to="/login">Login</Link></li>
+			<li><Link to="/signup">Signup</Link></li>
 			<Redirect to="/" />
-		</div>
+		</ul>
 		);
     }
     return(
-	    <div className="nav-container">
-			<Link to="/login" onClick={this.signOut}>Logout</Link>
-			<Link to="/create">Create a Story</Link>
-			<Link to="/dashboard">Dashboard</Link>
-		</div>
+	    <ul className="nav-container">
+			<li><Link to="/login" onClick={this.signOut}>Logout</Link></li>
+			<li><Link to="/create">Create a Story</Link></li>
+			<li><Link to="/dashboard">Dashboard</Link></li>
+		</ul>
     );
 }
 

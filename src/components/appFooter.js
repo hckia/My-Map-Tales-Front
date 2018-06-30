@@ -7,18 +7,17 @@ export default class AppFooter extends React.Component {
 		return (
 				<div className="footer-container">
 					<button>
-						My Tales</button><button>Following
+						About this App
 					</button>
 					<button>
-						Followers
+						Login Demo
 					</button>
-					This component will be the footer of your app!
 				</div>
 			);
 	}
 }
 
-/* 
+/*
 Need to add event handlers that do the following...
 
 Need to create three routes, with three events...

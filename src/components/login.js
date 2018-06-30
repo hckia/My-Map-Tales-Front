@@ -8,7 +8,6 @@ import {required, nonEmpty} from '../validators';
 import {Redirect} from 'react-router-dom';
 import { loadAuthToken } from '../reducers/local-storage';
 import AppHeader from './appHeader';
-import Menu from './menu';
 import AppFooter from './appFooter';
 
 export class Login extends React.Component {
@@ -43,8 +42,8 @@ export class Login extends React.Component {
         return (
             <div>
                 <AppHeader term="" parentComp="form" />
-                <Menu />
 	        	<div className="login-container">
+							  <h2>Login</h2>
 		            <form
 		                className="login-form"
 		                onSubmit={this.props.handleSubmit(values =>

@@ -6,6 +6,7 @@ import DropDown from './dropdown';
 import './style/appHeader.css';
 import { searchStories } from '../actions/';
 import {logout} from '../actions/auth';
+import { Link } from 'react-router-dom';
 
 //import {logOut} from '../actions/auth';
 //import { loadAuthToken } from '../reducers/local-storage';
@@ -37,14 +38,14 @@ class AppHeader extends React.Component {
 		return (
 			<div className="header-container">
 				<DropDown />
-				<h1 className="app-header">App Header Component</h1>
+				<Link to="/"><h1 className="app-header">My Map Tales</h1></Link>
 			</div>
-        );			
+        );
 		}
 		return (
 			<div className="header-container">
 				<DropDown />
-				<h1 className="app-header">App Header Component</h1>
+				<Link to="/"><h1 className="app-header">My Map Tales</h1></Link>
 				<SearchBar onSearchTermChange={this.storySearch}/>
 			</div>
         );
@@ -52,7 +53,7 @@ class AppHeader extends React.Component {
 
 }
 
-/* 
+/*
 Lets create a navbar component so that our links have more control over their position. This will also help with your current positioning of links issue
 */
 

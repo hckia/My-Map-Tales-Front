@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style/textArea.css'
 
 export default class TextArea extends Component {
     componentDidUpdate(prevProps) {
@@ -27,7 +28,7 @@ export default class TextArea extends Component {
                     {error}
                     {warning}
                 </label>
-                <textarea {...this.props.input} id={this.props.input.name} type={this.props.type} ref={input => (this.input = input)} placeholder="Tell your story" rows="10" cols="40"></textarea>
+                <textarea {...this.props.input} id={this.props.input.name} type={this.props.type} ref={input => (this.input = input)} placeholder="Tell your story" rows="10" cols="76.8"></textarea>
             </div>
         );
     }

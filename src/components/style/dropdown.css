@@ -2,3 +2,7 @@
 	float: right;
 	padding: 5px;
 }
+
+.dropdown > button {
+	float: right;
+}

@@ -1,0 +1,171 @@
+/*design for 1024 */
+@media screen and (min-width: 1024px) {
+
+  .description-container{
+    margin: 20vh 20vw 20vh 20vw;
+  	display: inline-block;
+  	width: 50vw;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .story-group {
+    background-color: black;
+    height: 300px;
+    box-shadow:0 0 40px -10px #000;
+    margin-bottom: 10px;
+  }
+
+  .story-title-container{
+      background-color: #fff;
+      color: black;
+      width: 100%;
+  }
+
+  .story-title-container > h2{
+    text-align: center;
+    padding: 25px;
+  }
+
+  .story-left-container .story-right-container {
+    display: inline-block;
+  }
+
+  .story-left-container {
+    width: 50%;
+    height: 80%;
+    float: left;
+  }
+
+  .story-right-container {
+    width: 50%;
+    height: 80%;
+    font-size: 20px;
+    background-color: #e2edff;
+    float: right;
+    color: black;
+  }
+
+  .story-label {
+    font-weight: bold;
+    font-style: italic;
+    padding: 0px 0px 0px 20px;
+    /* margin-bottom: -10px; */
+  }
+
+  .story-right-container > p {
+    padding-left: 20px;
+  }
+
+  #a-story-description {
+    font-style: italic;
+    background-color: #c2d8fc;
+    width: 100%;
+    height: 20%;
+    float: left;
+    color: black;
+    /* padding: 15px; */
+  }
+
+  #a-story-description > p {
+    padding: 0px 0px 0px 10px;
+  }
+
+  #a-story-body{
+    padding: 25px 25px 25px 25px;
+    color: black;
+    height: 100%;
+    background-color: white;
+  }
+  #story-date{
+    background-color: #fff;
+  }
+}
+
+/*design for 420 */
+@media screen and (max-width: 1024px) and (min-width: 420px) {
+.description-container{
+  margin: 20vh 10vw 20vh 10vw;
+	display: inline-block;
+	width: 80vw;
+  background-attachment: fixed;
+  background-position: center;
+}
+.story-group {
+  background-color: black;
+  height: 300px;
+  box-shadow:0 0 40px -10px #000;
+  margin-bottom: 10px;
+}
+
+.story-title-container{
+    background-color: #fff;
+    color: black;
+    width: 100%;
+}
+
+.story-title-container > h2{
+  text-align: center;
+  padding: 25px;
+}
+
+.story-left-container .story-right-container {
+  display: inline-block;
+}
+
+.story-left-container {
+  width: 100%;
+  height: 50%;
+  float: left;
+}
+
+.story-right-container {
+  width: 100%;
+  height: 50%;
+  font-size: 20px;
+  background-color: #e2edff;
+  float: right;
+  color: black;
+}
+
+.story-label {
+  font-weight: bold;
+  font-style: italic;
+  padding: 0px 0px 0px 20px;
+  /*margin-bottom: -20px;*/
+}
+
+
+.story-right-container > p {
+  padding-left: 20px;
+  margin-bottom: -10px;
+}
+
+#a-story-description {
+  font-style: italic;
+  background-color: #c2d8fc;
+  width: 100%;
+  height: 20%;
+  float: left;
+  color: black;
+}
+
+#a-story-description > p {
+  padding: 0px 0px 0px 10px;
+}
+
+#a-story-body{
+  padding: 50px 25px 25px 25px;
+  color: black;
+  height: 100%;
+  background-color: white;
+}
+
+#story-date{
+  background-color: #fff;
+}
+
+}
+
+@media screen and (max-width: 400px){
+
+}

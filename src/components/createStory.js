@@ -6,7 +6,6 @@ import StoryForm from './storyForm';
 //import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import AppHeader from './appHeader';
-import Menu from './menu';
 import AppFooter from './appFooter';
 import requiresLogin from './requires-login';
 import { connect } from 'react-redux';
@@ -22,7 +21,6 @@ export class CreateStory extends Component {
         return (
         	<div>
 		        <AppHeader term="" parentComp="form" />
-		        <Menu />
 	        	<div className="story-container">
 		          <h2>So what's your story?</h2>
 	              <StoryForm />

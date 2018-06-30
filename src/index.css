@@ -28,6 +28,13 @@ body {
   flex-direction: column;
   margin: 0;
   background: #f6f6f6;
+  background-image: url("./imgs/cartographer_map.JPG");
+  background-attachment: fixed;
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*.app-container {
