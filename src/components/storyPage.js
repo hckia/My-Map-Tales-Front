@@ -2,53 +2,33 @@ import _ from 'lodash';
 import './style/storyPage.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchStories } from '../actions';
+import { fetchAStory } from '../actions';
 import Map from './map';
 import AppHeader from './appHeader';
 import AppFooter from './appFooter';
 
 class StoryPage extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    console.log('params ', this.props.match.params.story);
-    this.state = {
-      id: this.props.match.params.story
-    }
-    //console.log('story array of objects (should be object)', this.props.stories);
+    this.props.fetchAStory(this.props.match.params.story);
   }
   componentDidMount(){
       // console.log(JSON.stringify(this.props.fetchStories()))
-      this.props.fetchStories();
+      console.log('params ', this.props.match.params.story);
+      this.props.fetchAStory(this.props.match.params.story);
+      console.log('Our... story? ',this.props.ourStory);
       this.findSelectedStory = this.findSelectedStory.bind(this);
   }
 
   findSelectedStory(){
-    console.log("id we are trying to find ", this.state.id);
-  //var storyFound = [];
-  var storyFound = {}
-  _.map(this.props.stories, story => {
-    //console.log("current id: ", story._id);
-      if(story._id === this.state.id){
-        storyFound._id = story._id;
-        storyFound.title = story.title;
-        storyFound.description = story.description;
-        storyFound.location = story.location;
-        storyFound.author = story.author;
-        storyFound.body = story.body;
-        storyFound.date = story.date;
-        // storyFound.push(story._id);
-        // storyFound.push(story.title);
-        // storyFound.push(story.description);
-        // storyFound.push(story.location);
-        // storyFound.push(story.author);
-        // storyFound.push(story.body);
-      }
-    });
-    console.log(storyFound);
-    return storyFound;
+    //this existed in a previous version as a way to map through an array of objects and find a speciifc story.
+    //i'm just using it now to try to find out what's going on.
+    console.log("Story we are trying to find - this props.ourStory ", this.props.ourStory);
+    return this.props.ourStory;
   }
 
   render(){
+    console.log("Story we are trying to find - this props.ourStory ", this.props.ourStory);
     const storyResults = this.findSelectedStory();
     console.log('Story found ', storyResults)
     return(
@@ -70,7 +50,7 @@ class StoryPage extends Component {
       </div>
       <div id="a-story-description"><p>{storyResults.description}</p><p id="story-date">Date: {storyResults.date}</p></div>
       </div>
-      <div id="a-story-body"><p>{storyResults.body.replace(/\\n/g, "\\n\\n")}</p></div>
+      <div id="a-story-body"><p>{storyResults.body}</p></div>
     </div>
     <AppFooter />
   </div>
@@ -79,7 +59,8 @@ class StoryPage extends Component {
 }
 
 function mapStateToProps(state) {
-  return {stories: state.stories};
+  console.log('from the state: ',state.storiesReducer.theStory);
+  return { ourStory: state.storiesReducer.theStory };
 }
 
-export default connect(mapStateToProps, {fetchStories})(StoryPage);
+export default connect(mapStateToProps, {fetchAStory})(StoryPage);

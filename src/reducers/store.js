@@ -6,14 +6,16 @@ import authReducer from './reducer_auth';
 import protectedDataReducer from './reducer_protected-data';
 import {setAuthToken, refreshAuthToken} from '../actions/auth';
 import StoryReducer from './reducer_stories';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = createStore(combineReducers({
-	stories: StoryReducer,
+	  storiesReducer: StoryReducer,
     form: formReducer,
     auth: authReducer,
     protectedData: protectedDataReducer
-}),
+}), composeWithDevTools(
 	applyMiddleware(thunk)
+)
 );
 
 

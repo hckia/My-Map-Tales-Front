@@ -14,10 +14,8 @@ class MyStories extends Component {
   constructor(props) {
     super(props);
     this.toggleModal = this.toggleModal.bind(this);
-    this.props.fetchMyStories();
     this.state = {
-      isOpen: false,
-      storyPostSuccess: 'Here you\'ll see all stories you\'ve created. Not seeing what you like? Feel Free to click on the Menu Icon in the top right corner to create your own story!'
+      isOpen: false
     };
   }
     componentDidMount(){
@@ -70,7 +68,6 @@ class MyStories extends Component {
                     </div>
                     <Modal show={this.state.isOpen}
                       onClose={this.toggleModal}>
-                      <p>{this.state.storyPostSuccess}</p>
                     </Modal>
                      <AppFooter />
                 </div>
@@ -82,7 +79,7 @@ class MyStories extends Component {
 
 function mapStateToProps(state) {
     //console.log("state " + JSON.stringify(state))
-    return { stories: state.stories };
+    return { stories: state.storiesReducer.userStories };
 }
 
 export default requiresLogin()(connect(mapStateToProps, { fetchMyStories })(MyStories));

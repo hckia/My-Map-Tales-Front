@@ -60,7 +60,7 @@ class MyMapTalesDescription extends Component {
 function MapStateToProps(state){
 	//console.log("state " + JSON.stringify(state))
 	return {
-    stories: state.stories,
+    stories: state.storiesReducer.stories,
 		loggedIn: state.auth.loggedIn
 	 };
 }

@@ -47,7 +47,7 @@ class Modal extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    feedback: state.stories.message
+    feedback: state.storiesReducer.message
 })
 
 Modal = connect(mapStateToProps)(Modal);

@@ -46,14 +46,30 @@ function substringSearch(data, term){
   return results;
 }
 
-const takeAction = (serverResults) => {
+export const FETCH_STORIES = 'fetch_stories';
+const fetchStoriesSuccess = (serverResults) => {
 	return {
 		type: FETCH_STORIES,
 		payload: serverResults
 	}
 }
 
-export const FETCH_STORIES = 'fetch_stories';
+export const FETCH_MY_STORIES = 'FETCH_MY_STORIES'; // good convention to leave as uppercase
+const fetchStoriesUserSuccess = (userStories) => {
+	return {
+		type: FETCH_MY_STORIES,
+		payload: userStories
+	}
+}
+export const FETCH_A_STORY = 'FETCH_A_STORY';
+const fetchedStoryRetrieved = (theStory) => {
+	console.log('fetchedStoryRetrieved has fired ', theStory);
+	return {
+		type: FETCH_A_STORY,
+		payload: theStory
+	}
+}
+
 export const fetchStories = () => dispatch => {
 	fetch(`${API_BASE_URL}/stories/`, {
 	        method: 'GET',
@@ -67,15 +83,32 @@ export const fetchStories = () => dispatch => {
 		})
 		.then(serverResults => {
 			results = serverResults;
-			dispatch(takeAction(serverResults));
+			dispatch(fetchStoriesSuccess(serverResults));
 		})
 	    .catch(err =>
        		console.log(err)
     	);
+}
 
-//should show the default results, in case console log errors out.
-	console.log(results)
-	// dispatch(takeAction());
+export const fetchAStory = (story) => dispatch => {
+	console.log('fetchAStory has fired')
+	fetch(`${API_BASE_URL}/stories/${story}`, {
+		      method: 'GET',
+					headers: {
+						  'Content-Type': 'application/json'
+					}
+	})
+	.then(res => {
+		console.log('response ', res);
+		return res.json();
+	})
+	.then(data =>{
+		console.log('Story found ',data);
+		dispatch(fetchedStoryRetrieved(data));
+	})
+	.catch(err =>{
+		console.log(err);
+	})
 }
 
 export const FAILED_STORY = 'failed_story';
@@ -93,18 +126,19 @@ export const fetchMyStories = () => dispatch => {
 	        }
 	    })
 		.then(res =>{
-			//console.log(res.json());
+			//console.log(res);
 			statusRes = res.status;
 			return res.json();
 		})
 		.then(serverResults => {
+			console.log(serverResults)
 			if(statusRes === 204) {
 				console.log('204 fired ', statusRes)
 				dispatch({type: FAILED_STORY, payload: data});
 			}
 			console.log(serverResults);
 			results = serverResults;
-			dispatch(takeAction(serverResults));
+			dispatch(fetchStoriesUserSuccess(serverResults));
 		})
 	    .catch(err => {
        		console.log("catch block fired ",err);
@@ -112,9 +146,6 @@ export const fetchMyStories = () => dispatch => {
 					//console.log(err)
     	});
 
-//should show the default results, in case console log errors out.
-	console.log(results)
-	// dispatch(takeAction());
 }
 
 // this will help with the search story function https://repl.it/@victorb/Cyrus-Substring-Search-Method-formerly-bullshit
@@ -152,7 +183,7 @@ export const createStories = (story, getState) => dispatch => {
 		.then(data => {
 			console.log('data code: ', data)
 			console.log('status ', statusRes)
-			if(statusRes=== 201){
+			if(statusRes === 201){
 				//console.log("201!!!! ",data);
 				data.message = data.title + " has been posted!";
 				//console.log("new data object ", data);

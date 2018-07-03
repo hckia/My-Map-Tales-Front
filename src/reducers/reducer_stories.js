@@ -1,21 +1,38 @@
 import _ from 'lodash';
-import { FAILED_STORY, FETCH_STORIES, SEARCH_STORIES, SUCCESS_STORY } from '../actions/index';
+import { FETCH_A_STORY, FETCH_MY_STORIES, FAILED_STORY, FETCH_STORIES, SEARCH_STORIES, SUCCESS_STORY } from '../actions/index';
 //CREATE_STORIES
 
 const initialState = {
-	feedback: ''
+	feedback: '',
+	userStories: [],
+	stories: [],
+	theStory: {story: 'no story'}
 };
 
-
-
-export default function StoryReducer(state = {}, action){
+export default function StoryReducer(state = initialState, action){
 	//console.log("action fired: ", action);
 	switch(action.type){
 	case FETCH_STORIES:
-		return _.mapKeys(action.payload, '_id')
+		return {
+			...state,
+			stories: action.payload
+		}
+	case FETCH_MY_STORIES:
+		return {
+			...state,
+			userStories: action.payload
+		}
+	case FETCH_A_STORY:
+		console.log('FETCH_A_STORY reducer has fired ', action.payload);
+		return {
+			...state,
+			theStory: action.payload
+		}
 	case SEARCH_STORIES:
-		//console.log('within reducers term value: ',action.payload);
-		return action.payload;
+		return {
+			...state,
+			stories: action.payload
+		}
 	// case CREATE_STORIES:
 	// 	return action.payload;
 	case SUCCESS_STORY:

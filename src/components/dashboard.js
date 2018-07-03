@@ -59,7 +59,7 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
     //console.log("state " + JSON.stringify(state))
-    return { stories: state.stories };
+    return { stories: state.storiesReducer.stories };
 }
 
 export default requiresLogin()(connect(mapStateToProps, { fetchStories })(Dashboard));
