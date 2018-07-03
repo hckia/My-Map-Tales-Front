@@ -26,7 +26,7 @@ export class StoryForm extends Component {
     this.toggleModal = this.toggleModal.bind(this);
     this.renderField = this.renderField.bind(this);
     // may remove state. this is found just before our date input...
-    /* 
+    /*
 		          {this.selectedDay && <p>Day: {this.selectedDay.toLocaleDateString()}</p>}
 		          {!this.selectedDay && <p>Choose a day</p>}
     */
@@ -70,7 +70,7 @@ export class StoryForm extends Component {
 
 
     renderField(Field){
-    	return <DayPickerInput inputProps={Field.input} dayPickerProps={{month: new Date(2018,10), todayButton: 'Today',}} onDayChange={this.handleDayChange} />
+    	return <div><DayPickerInput inputProps={Field.input} dayPickerProps={{month: new Date(2018,10), todayButton: 'Today',}} onDayChange={this.handleDayChange} /></div>
     }
 
     render() {
@@ -93,9 +93,9 @@ export class StoryForm extends Component {
                     this.onSubmit(values)
                 )}>
                 <label htmlFor="title">Title</label>
-                <Field component={Input} type="text" name="title" />
+                <Field component={Input} type="text" name="title" validate={[required, nonEmpty]}/>
                 <label htmlFor="description">Description</label>
-                <Field component={Input} type="text" name="description" />
+                <Field component={Input} type="text" name="description" validate={[required, nonEmpty]} />
                 <label htmlFor="location">Location</label>
                 <Field
                     component={Input}
@@ -118,15 +118,14 @@ export class StoryForm extends Component {
                     name="body"
                     validate={[required, nonEmpty]}
                 />
-                <button
+                <button className="btn btn-4 btn-4a icon-arrow-right"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting} onClick={this.toggleModal}>
-                    Tell your story 
+                    Tell your story
                 </button>
             </form>
             <Modal show={this.state.isOpen}
               onClose={this.toggleModal}>
-              
               <p>{this.state.storyPostSuccess}</p>
             </Modal>
             </div>
@@ -149,7 +148,7 @@ export default reduxForm({
     }
 })(StoryForm);
 
-/*              
+/*
             <Modal show={this.state.isOpen}
               onClose={this.toggleModal}>
               {this.state.storyPostSuccess}

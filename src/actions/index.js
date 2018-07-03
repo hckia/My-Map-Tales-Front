@@ -9,8 +9,8 @@ import {loadAuthToken} from '../reducers/local-storage';
 
 var results = [{
 			"_id": 1,
-			"title": 'my trip to Rome', 
-			"description": 'The time I feel in love with Italy and Lasanga', 
+			"title": 'my trip to Rome',
+			"description": 'The time I feel in love with Italy and Lasanga',
 			"location": 'Rome, Italy',
 			"date": '1/29/1985',
 			"author": 'Bob Dohl',
@@ -18,8 +18,8 @@ var results = [{
 		},
 		{
 			"_id": 2,
-			"title": 'my trip to Tehran', 
-			"description": 'The time I feel in love with Iran and Kabob', 
+			"title": 'my trip to Tehran',
+			"description": 'The time I feel in love with Iran and Kabob',
 			"location": 'Tehran, Iran',
 			"date": '1/29/1995',
 			"author": 'Babak Dolati',
@@ -38,7 +38,7 @@ function substringSearch(data, term){
       let pattern = new RegExp('\\b' + term + '\\b', 'ig');
       // console.log('Searching key:', key, 'for', pattern);
       if( strValue.match( pattern ) ) return true;
-    
+
     }
     return false;
   });
@@ -59,7 +59,7 @@ export const fetchStories = () => dispatch => {
 	        method: 'GET',
 	        headers: {
 	            'Content-Type': 'application/json'
-	        } 
+	        }
 	    })
 		.then(res =>{
 			//console.log(res.json());
@@ -72,6 +72,45 @@ export const fetchStories = () => dispatch => {
 	    .catch(err =>
        		console.log(err)
     	);
+
+//should show the default results, in case console log errors out.
+	console.log(results)
+	// dispatch(takeAction());
+}
+
+export const FAILED_STORY = 'failed_story';
+//same as fetchStories, but only the users stories
+export const fetchMyStories = () => dispatch => {
+	const authToken = loadAuthToken();
+  let statusRes;
+	var data = {};
+	data.message = "You have no stories! You should go to the menu in the top right corner and select Create a Story to add your own.";
+	fetch(`${API_BASE_URL}/stories/myStories`, {
+	        method: 'GET',
+	        headers: {
+	            'Content-Type': 'application/json',
+	            Authorization: `Bearer ${authToken}`
+	        }
+	    })
+		.then(res =>{
+			//console.log(res.json());
+			statusRes = res.status;
+			return res.json();
+		})
+		.then(serverResults => {
+			if(statusRes === 204) {
+				console.log('204 fired ', statusRes)
+				dispatch({type: FAILED_STORY, payload: data});
+			}
+			console.log(serverResults);
+			results = serverResults;
+			dispatch(takeAction(serverResults));
+		})
+	    .catch(err => {
+       		console.log("catch block fired ",err);
+					dispatch({type: FAILED_STORY, payload: data})
+					//console.log(err)
+    	});
 
 //should show the default results, in case console log errors out.
 	console.log(results)
@@ -92,13 +131,13 @@ export const searchStories = (searchTerm) => {
 }
 
 //export const CREATE_STORIES = 'create_stories';
-export const FAILED_STORY = 'failed_story';
 export const SUCCESS_STORY = 'success_story';
 export const createStories = (story, getState) => dispatch => {
 	//console.log("fired", loadAuthToken());
     const authToken = loadAuthToken();
     //console.log('authToken: '.authToken);
-   // console.log(story);
+	 console.log(story.body);
+	 let statusRes;
 		fetch(`${API_BASE_URL}/stories/`, {
 	        method: 'POST',
 	        headers: {
@@ -107,18 +146,22 @@ export const createStories = (story, getState) => dispatch => {
 	        },
         body: JSON.stringify(story)
 	    })
-	    .then(res => res.json())
+	    .then(res => {
+				statusRes = res.status;
+				return res.json()})
 		.then(data => {
-			// console.log('data: ',data)
-			if(data.code === 201){
-				console.log("201!!!! ",data);
+			console.log('data code: ', data)
+			console.log('status ', statusRes)
+			if(statusRes=== 201){
+				//console.log("201!!!! ",data);
+				data.message = data.title + " has been posted!";
+				//console.log("new data object ", data);
 				dispatch({type: SUCCESS_STORY, payload: data})
 			}
 			else if(data.code === 422){
 				console.log("422!!!! ", data);
 				dispatch({type: FAILED_STORY, payload: data});
 			}
-			//res.json()
 		})
         .catch(err => {
         	console.log('ValidationError ',err)

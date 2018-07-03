@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import MyMapTalesDescription from './components/myMapTalesDescription';
 import Dashboard from './components/dashboard';
+import MyStories from './components/myStories.js';
 import StoryPage from './components/storyPage';
 import CreateStory from './components/createStory';
 import Login from './components/login';
@@ -48,6 +49,7 @@ ReactDOM.render(
 	      <div className="app-container">
 			<Switch>
 				<Route path="/dashboard" component={Dashboard}/>
+        <Route path="/mystories" component={MyStories}/>
 				<Route path="/create" component={CreateStory}/>
 				<PrivateRoute path="/login" component={Login} />
         <Route path="/story/:story" component={StoryPage} />

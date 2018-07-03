@@ -22,7 +22,7 @@ export class CreateStory extends Component {
         	<div>
 		        <AppHeader term="" parentComp="form" />
 	        	<div className="story-container">
-		          <h2>So what's your story?</h2>
+		          <div className="form-header"><h2>So what's your story?</h2></div>
 	              <StoryForm />
 	            </div>
 	            <AppFooter />

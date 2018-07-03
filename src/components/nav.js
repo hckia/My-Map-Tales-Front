@@ -42,9 +42,10 @@ render(){
     }
     return(
 	    <ul className="nav-container">
-			<li><Link to="/login" onClick={this.signOut}>Logout</Link></li>
-			<li><Link to="/create">Create a Story</Link></li>
 			<li><Link to="/dashboard">Dashboard</Link></li>
+			<li><Link to="/create">Create a Story</Link></li>
+			<li><Link to="/mystories">My Stories</Link></li>
+			<li><Link to="/login" onClick={this.signOut}>Logout</Link></li>
 		</ul>
     );
 }

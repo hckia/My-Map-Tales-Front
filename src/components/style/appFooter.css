@@ -5,5 +5,58 @@
     padding: 1rem;
     z-index: 1;
     /*margin: .5rem 1rem;*/
-   background:#6cf;
+   background:#d9d1ba;
+}
+
+@media screen and (min-width: 1024px) {
+
+	.button-container-left{
+		 display: inline-block;
+			/* margin-left: 10%; */
+	}
+
+	.button-container{
+		margin: auto;
+		width: 50%;
+	}
+
+	.button-container-right{
+		 display: inline-block;
+		margin-right: 20%;
+	}
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 420px) {
+
+	.button-container{
+		margin: auto;
+		width: 68%;
+	}
+	.button-container-left{
+		 display: inline-block;
+			/* margin-left: 5%; */
+	}
+
+	.button-container-right{
+		 display: inline-block;
+		margin-right: 5%;
+	}
+}
+
+@media screen and (max-width: 420px){
+
+	.button-container{
+		margin: auto;
+		width: 70%;
+	}
+	.button-container-left{
+		 display: inline-block;
+			/* margin-left: 10%; */
+	}
+
+	.button-container-right{
+		 display: inline-block;
+		/* margin-right: 10%; */
+	}
 }

@@ -25,8 +25,8 @@ export default class DropDown extends Component {
   render() {
     return (
       <div className="dropdown">
-        <button onClick={this.showMenu}>
-          Show menu
+        <button className="btn btn-4 btn-4a icon-arrow-right" onClick={this.showMenu}>
+          menu
         </button>
 
         {

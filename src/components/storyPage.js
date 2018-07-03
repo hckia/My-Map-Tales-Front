@@ -54,7 +54,7 @@ class StoryPage extends Component {
     return(
     <div>
       <AppHeader term="" parentComp="form" />
-    <div className="description-container">
+    <div className="single-description-container">
       <div className="story-title-container">
       <h2>{storyResults.title}</h2>
       </div>
@@ -70,8 +70,7 @@ class StoryPage extends Component {
       </div>
       <div id="a-story-description"><p>{storyResults.description}</p><p id="story-date">Date: {storyResults.date}</p></div>
       </div>
-      <div id="a-story-body"><p>{storyResults.body}</p></div>
-
+      <div id="a-story-body"><p>{storyResults.body.replace(/\\n/g, "\\n\\n")}</p></div>
     </div>
     <AppFooter />
   </div>
@@ -79,46 +78,8 @@ class StoryPage extends Component {
   }
 }
 
-/*
-<p className="story-label">On... </p>
-<p>{storyResults.date}</p>
-*/
-
 function mapStateToProps(state) {
   return {stories: state.stories};
 }
 
 export default connect(mapStateToProps, {fetchStories})(StoryPage);
-
-/*
-<div className="story-group">
-  <div className="left-container">
-    <Map location={storyFound.location}/>
-  </div>
-  <div className="right-container">
-    <h2>{storyFound.title}</h2>
-    <p>Story Teller: {storyFound.author}</p>
-    <h3>Location: {storyFound.location}</h3>
-    <p>Date: {storyFound.date}</p>
-  </div>
-  <div id="story-description">
-    <p>{storyFound.description}</p>
-  </div>
-</div>
-
-<div class="story-group">
-<div class="title-container">
-<h2>{storyFound.title}</h2>
-</div>
-<div class="left-container">
-
-</div>
-<div class="right-container">
-<p>{storyFound.author}</p>
-<p>{storyFound.location}</p>
-<p>{storyFound.date}</p>
-</div>
-<div id="story-description"><p>{storyFound.description}</p></div>
-<div id="story-body"><p>{storyFound.body}</p></div>
-</div>
-*/

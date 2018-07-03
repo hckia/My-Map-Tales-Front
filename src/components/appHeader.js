@@ -34,7 +34,7 @@ class AppHeader extends React.Component {
 		//					inside render<p>{this.state.story}</p>
 	}
 	render(){
-		if(this.props.parentComp == "form"){
+		if(this.props.parentComp === "form"){
 		return (
 			<div className="header-container">
 				<DropDown />

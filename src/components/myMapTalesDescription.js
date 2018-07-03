@@ -27,7 +27,7 @@ class MyMapTalesDescription extends Component {
                 <div className="right-container">
                   <h2>{story.title}</h2>
                   <p>Story Teller: {story.author}</p>
-                  <h3>Location: {story.location}</h3>
+                  <p>Location: {story.location}</p>
                   <p>Date: {story.date}</p>
                 </div>
                 <div id="story-description">

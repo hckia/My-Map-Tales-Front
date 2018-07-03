@@ -1,22 +1,24 @@
 .nav-container {
 	z-index: ;
+	padding: 0;
+	margin-top: 0;
 	text-align: center;
 	font-size: 25px;
-	width: 380px;
-	background-color: black;
+	width: 200px;
+	background-color: #fff;
 	float: right;
 	padding: 15px;
 	margin: 5px;
 	height: 50vh;
   position: absolute;
 	right: 0px;
-	top: 20px;
+	top: 30px;
 	-webkit-transition: color 2s; /* Safari */
 	transition: color 2s;
+  border: 2px solid #fff;
+  border-radius: 3px;
 }
 ul {
-	padding: 0;
-	margin: 0;
   list-style-type: none;
 }
 
@@ -25,10 +27,14 @@ li {
 	padding: 10px 0 10px 0;
 }
 
-li:hover {
-    background-color: white;
+li a.active {
+    background-color: #4CAF50;
+    color: white;
 }
 
-a:visited {
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}a:visited {
     text-decoration: none;
 }

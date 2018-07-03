@@ -1,18 +1,37 @@
 import _ from 'lodash';
-import './style/dashboard.css';
+import './style/myStories.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchStories } from '../actions';
+import { fetchMyStories } from '../actions';
 import Map from './map';
 import AppHeader from './appHeader';
 import AppFooter from './appFooter';
 import { Link } from 'react-router-dom';
+import Modal from './modal';
 
-class Dashboard extends Component {
+class MyStories extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.props.fetchMyStories();
+    this.state = {
+      isOpen: false,
+      storyPostSuccess: 'Here you\'ll see all stories you\'ve created. Not seeing what you like? Feel Free to click on the Menu Icon in the top right corner to create your own story!'
+    };
+  }
     componentDidMount(){
-        // console.log(JSON.stringify(this.props.fetchStories()))
-        this.props.fetchStories();
+        // console.log(JSON.stringify(this.props.fetchMyStories()))
+        this.props.fetchMyStories();
+        this.toggleModal();
+    }
+
+    toggleModal(){
+      //console.log("toggleModal fired ")
+     // console.log("this.props.feedback ", this.props.feedback.message)
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
     }
 
     renderStories() {
@@ -27,7 +46,7 @@ class Dashboard extends Component {
                   <div className="right-container">
                     <h2>{story.title}</h2>
                     <p>Story Teller: {story.author}</p>
-                    <p>Location: {story.location}</p>
+                    <h3>Location: {story.location}</h3>
                     <p>Date: {story.date}</p>
                   </div>
                   <div id="story-description">
@@ -49,6 +68,10 @@ class Dashboard extends Component {
                             {this.renderStories()}
                         </ul>
                     </div>
+                    <Modal show={this.state.isOpen}
+                      onClose={this.toggleModal}>
+                      <p>{this.state.storyPostSuccess}</p>
+                    </Modal>
                      <AppFooter />
                 </div>
             );
@@ -62,4 +85,4 @@ function mapStateToProps(state) {
     return { stories: state.stories };
 }
 
-export default requiresLogin()(connect(mapStateToProps, { fetchStories })(Dashboard));
+export default requiresLogin()(connect(mapStateToProps, { fetchMyStories })(MyStories));

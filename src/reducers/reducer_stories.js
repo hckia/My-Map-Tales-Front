@@ -22,14 +22,14 @@ export default function StoryReducer(state = {}, action){
 		console.log("SUCCESSS STORY REDUCER FIRED ", action.payload)
 		return action.payload
 	case FAILED_STORY:
-		//console.log("FAILED STORY REDUCER FIRED ", action.payload)
+		console.log("FAILED STORY REDUCER FIRED ", action.payload)
 		return action.payload
 	default:
 		return state;
 	}
 }
 
-/* 
+/*
 		return Object.assign({}, state, {
 			storyPostSuccess: 'your story has posted successfully!'
 		})

@@ -6,13 +6,19 @@ export default class AppFooter extends React.Component {
 	render(){
 		return (
 				<div className="footer-container">
-					<button>
-						About this App
-					</button>
-					<button>
-						Login Demo
-					</button>
+					<div className="button-container">
+						<div className="button-container-left">
+							<button className="btn btn-4 btn-4a icon-arrow-right">
+								Login Demo
+							</button>
+						</div>
+					<div className="button-container-right">
+						<button className="btn btn-4 btn-4a icon-arrow-right">
+							About this App
+						</button>
+				  </div>
 				</div>
+			</div>
 			);
 	}
 }

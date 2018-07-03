@@ -1,18 +1,25 @@
-.login-container{
-	margin: 20vh 20vw 20vh 20vw;
-	display: inline-block;
-	width: 50vw;
-}
 /*design for 1024 */
 @media screen and (min-width: 1024px) {
-
+	.login-container{
+		margin: 20vh 20vw 20vh 20vw;
+		display: inline-block;
+		width: 40vw;
+	}
 }
 
 /*design for 420 */
 @media screen and (max-width: 1024px) and (min-width: 420px) {
-
+	.login-container{
+		margin: 20vh 20vw 20vh 20vw;
+		display: inline-block;
+		width: 60vw;
+	}
 }
 
 @media screen and (max-width: 400px){
-
+	.login-container{
+		margin: 20vh 20vw 20vh 20vw;
+		display: inline-block;
+		width: 60vw;
+	}
 }

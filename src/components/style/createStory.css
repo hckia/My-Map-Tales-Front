@@ -1,18 +1,30 @@
-.story-container {
-	margin: 20vh 20vw 20vh 20vw;
-	display: inline-block;
-	width: 50vw;
-}
 /*design for 1024 */
-@media screen and (min-width: 1024px) {
 
+.form-header{
+	background-color: #d9d1ba;
+}
+
+@media screen and (min-width: 1024px) {
+	.story-container {
+		margin: 20vh 20vw 20vh 20vw;
+		display: inline-block;
+		width: 50vw;
+	}
 }
 
 /*design for 420 */
 @media screen and (max-width: 1024px) and (min-width: 420px) {
-
+	.story-container {
+		margin: 20vh 10vw 20vh 10vw;
+		display: inline-block;
+		width: 80vw;
+	}
 }
 
-@media screen and (max-width: 400px){
-
+@media screen and (max-width: 420px){
+	.story-container {
+		margin: 20vh 5vw 20vh 5vw;
+		display: inline-block;
+		width: 90vw;
+	}
 }
