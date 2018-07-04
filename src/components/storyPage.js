@@ -29,7 +29,7 @@ class StoryPage extends Component {
   // }
   renderMap(storyResults){
     if(!storyResults.location){
-      return <p style={{color: '#fff', 'text-align': 'center', 'font-size': '25px'}}>"Loading map..."</p>
+      return <p style={{color: '#fff', 'textAlign': 'center', 'fontSize': '25px'}}>"Loading map..."</p>
     }else{
       return <Map location={storyResults.location} />
     }
