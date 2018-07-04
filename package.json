@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
     "npm": "^6.1.0",
@@ -14,11 +16,13 @@
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.4",
-    "reactstrap": "^6.1.0",
+    "react-test-renderer": "^16.4.1",
+    "reactstrap": "^6.2.0",
     "redux": "^4.0.0",
-    "redux-form": "^7.4.0",
+    "redux-form": "^7.4.2",
     "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "scripts": "^0.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

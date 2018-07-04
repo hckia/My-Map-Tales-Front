@@ -17,6 +17,9 @@ class MyStories extends Component {
     this.state = {
       isOpen: false
     };
+    if(!this.props.stories){
+      this.toggleModal();
+    }
   }
     componentDidMount(){
         // console.log(JSON.stringify(this.props.fetchMyStories()))
@@ -34,6 +37,7 @@ class MyStories extends Component {
 
     renderStories() {
         var leCount = 0;
+        //console.log('length ',this.props.stories);
         return _.map(this.props.stories, story => {
           //console.log(story);
             return (
@@ -42,9 +46,11 @@ class MyStories extends Component {
                     <Map location={story.location}/>
                   </div>
                   <div className="right-container">
-                    <h2>{story.title}</h2>
+                    <div className="story-title-container">
+                      <h2>{story.title}</h2>
+                    </div>
                     <p>Story Teller: {story.author}</p>
-                    <h3>Location: {story.location}</h3>
+                    <p>Location: {story.location}</p>
                     <p>Date: {story.date}</p>
                   </div>
                   <div id="story-description">

@@ -18,6 +18,7 @@ class StoryPage extends Component {
       this.props.fetchAStory(this.props.match.params.story);
       console.log('Our... story? ',this.props.ourStory);
       //this.findSelectedStory = this.findSelectedStory.bind(this);
+      this.renderMap = this.renderMap.bind(this);
   }
 
   // findSelectedStory(){
@@ -26,6 +27,13 @@ class StoryPage extends Component {
   //   console.log("Story we are trying to find - this props.ourStory ", this.props.ourStory);
   //   return this.props.ourStory;
   // }
+  renderMap(storyResults){
+    if(!storyResults.location){
+      return <p style={{color: '#fff', 'text-align': 'center', 'font-size': '25px'}}>"Loading map..."</p>
+    }else{
+      return <Map location={storyResults.location} />
+    }
+  }
 
   render(){
     console.log("Story we are trying to find - this.props.ourStory ", this.props.ourStory);
@@ -35,20 +43,19 @@ class StoryPage extends Component {
     <div>
       <AppHeader term="" parentComp="form" />
     <div className="single-description-container">
+
+      <div className="story-group">
+      <div className="story-left-container">
+        {this.renderMap(storyResults)}
+      </div>
+      <div className="story-right-container">
+        <p>Located in {storyResults.location}</p>
       <div className="story-title-container">
       <h2>{storyResults.title}</h2>
       </div>
-      <div className="story-group">
-      <div className="story-left-container">
-        <Map location={storyResults.location} />
+      <p style={{'font-style': 'italic'}}>{storyResults.description}</p>
       </div>
-      <div className="story-right-container">
-      <p className="story-label">A story by... </p>
-      <p>{storyResults.author}</p>
-      <p className="story-label">At... </p>
-      <p>{storyResults.location}</p>
-      </div>
-      <div id="a-story-description"><p>{storyResults.description}</p><p id="story-date">Date: {storyResults.date}</p></div>
+      <div id="a-story-description"><p>written by {storyResults.author}</p><p id="story-date">Date: {storyResults.date}</p></div>
       </div>
       <div id="a-story-body"><p>{storyResults.body}</p></div>
     </div>
@@ -57,7 +64,12 @@ class StoryPage extends Component {
     );
   }
 }
+/*
 
+<p className="story-label">A story by... </p>
+<p className="story-label">At... </p>
+<p>{storyResults.location}</p>
+*/
 function mapStateToProps(state) {
   console.log('from the state: ',state.storiesReducer.theStory);
   return { ourStory: state.storiesReducer.theStory };

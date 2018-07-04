@@ -25,7 +25,9 @@ class Dashboard extends Component {
                     <Map location={story.location}/>
                   </div>
                   <div className="right-container">
-                    <h2>{story.title}</h2>
+                    <div className="story-title-container">
+                      <h2>{story.title}</h2>
+                    </div>
                     <p>Story Teller: {story.author}</p>
                     <p>Location: {story.location}</p>
                     <p>Date: {story.date}</p>
