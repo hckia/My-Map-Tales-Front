@@ -39,7 +39,7 @@ export default class Map extends Component {
 	render(){
 		return (
 			<div ref='map' name={this.props.location} style={{height: '100%', width: '100%', float: 'left'}}>
-				Map
+				<p id="map-load">Loading Map...</p>
 			</div>
 		);
 	}

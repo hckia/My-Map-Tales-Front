@@ -16,7 +16,7 @@ export class Login extends React.Component {
 		// this.state = {
 		// 	loggedInState: false
 		// }
-		console.log(this.props.loggedIn);
+		//console.log(this.props.loggedIn);
 	}
 
 
@@ -43,7 +43,7 @@ export class Login extends React.Component {
             <div>
                 <AppHeader term="" parentComp="form" />
 	        	<div className="login-container">
-							  <h2>Login</h2>
+							  <div className="form-header"><h2>Login</h2></div>
 		            <form
 		                className="login-form"
 		                onSubmit={this.props.handleSubmit(values =>

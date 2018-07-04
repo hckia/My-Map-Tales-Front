@@ -1,3 +1,8 @@
+a {
+  color: purple;
+  text-decoration: none;
+}
+
 /*design for 1024 */
 @media screen and (min-width: 1024px) {
 
@@ -7,12 +12,13 @@
   	width: 80vw;
     background-attachment: fixed;
     background-position: center;
+    margin-bottom: 105px;
   }
   .story-group {
     background-color: black;
     height: 300px;
     box-shadow:0 0 40px -10px #000;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
 
   .story-title-container{
@@ -61,7 +67,7 @@
   #a-story-description {
     font-style: italic;
     background-color: #fff;
-    width: 100%;
+    width: 700px;
     height: 20%;
     float: left;
     color: black;
@@ -79,8 +85,28 @@
     white-space: pre-wrap;
   }
 
-  #story-date{
+  .details{
+    font-style: italic;
+    background-color: #d9d1ba;
+    color: purple;
+  }
+  .detail-position{
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .description{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1042px) and (min-width: 745px){
+  #a-story-description {
+    font-style: italic;
     background-color: #fff;
+    width: 700px;
+    height: 20%;
+    float: left;
+    color: black;
   }
 }
 
@@ -92,12 +118,13 @@
 	width: 80vw;
   background-attachment: fixed;
   background-position: center;
+  margin-bottom: 105px;
 }
 .story-group {
   background-color: black;
   height: 300px;
   box-shadow:0 0 40px -10px #000;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .story-title-container{
@@ -164,8 +191,14 @@
   white-space: pre-wrap;
 }
 
-#story-date{
-  background-color: #fff;
+.details{
+  font-style: italic;
+  background-color: #d9d1ba;
+  color: purple;
+}
+.detail-position{
+  margin-top: 10px;
+  padding: 5px;
 }
 
 }
@@ -177,12 +210,13 @@
   	width: 100vw;
     background-attachment: fixed;
     background-position: center;
+    margin-bottom: 105px;
   }
   .story-group {
     background-color: black;
     height: 300px;
     box-shadow:0 0 40px -10px #000;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
 
   .story-title-container{
@@ -231,7 +265,7 @@
   #a-story-description {
     font-style: italic;
     background-color: #fff;
-    width: 100%;
+    width: 390px;
     height: 20%;
     float: left;
     color: black;
@@ -243,13 +277,20 @@
 
   #a-story-body{
     padding: 50px 25px 25px 25px;
+    margin-bottom: 50px;
     color: black;
     height: 100%;
     background-color: white;
     white-space: pre-wrap;
   }
 
-  #story-date{
-    background-color: #fff;
+  .details{
+    font-style: italic;
+    background-color: #d9d1ba;
+    color: purple;
+  }
+  .detail-position{
+    margin-top: 10px;
+    padding: 5px;
   }
 }

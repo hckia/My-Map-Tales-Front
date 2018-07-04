@@ -53,9 +53,10 @@ class StoryPage extends Component {
       <div className="story-title-container">
       <h2>{storyResults.title}</h2>
       </div>
-      <p style={{'font-style': 'italic'}}>{storyResults.description}</p>
+      <p className="details detail-position">written by {storyResults.author}</p><p className="details detail-position">Date: {storyResults.date}</p>
+      <p className="details detail-position description">{storyResults.description}</p>
       </div>
-      <div id="a-story-description"><p>written by {storyResults.author}</p><p id="story-date">Date: {storyResults.date}</p></div>
+
       </div>
       <div id="a-story-body"><p>{storyResults.body}</p></div>
     </div>

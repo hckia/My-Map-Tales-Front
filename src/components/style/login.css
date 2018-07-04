@@ -10,16 +10,16 @@
 /*design for 420 */
 @media screen and (max-width: 1024px) and (min-width: 420px) {
 	.login-container{
-		margin: 20vh 20vw 20vh 20vw;
+		margin: 20vh 15vw 20vh 15vw;
 		display: inline-block;
-		width: 60vw;
+		width: 70vw;
 	}
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 420px){
 	.login-container{
-		margin: 20vh 20vw 20vh 20vw;
+		margin: 20vh 3vw 20vh 3vw;
 		display: inline-block;
-		width: 60vw;
+		width: 94vw;
 	}
 }

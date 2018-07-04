@@ -46,7 +46,6 @@ class Dashboard extends Component {
                 <div>
                     <AppHeader term="" parentComp="story" />
                     <div className="description-container">
-                        <h2>Stories</h2>
                         <ul onChange={this.renderStories}>
                             {this.renderStories()}
                         </ul>

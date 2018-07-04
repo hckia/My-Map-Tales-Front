@@ -16,7 +16,7 @@ export function SignUp(props) {
         <div>
         <AppHeader term="" parentComp="form" />
         <div className="signup-container">
-            <h2>Sign up for My Map Tales</h2>
+            <div className="form-header"><h2>Sign up for My Map Tales</h2></div>
             <RegistrationForm />
         </div>
         <AppFooter />
