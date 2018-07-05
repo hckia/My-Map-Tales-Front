@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './style/nav.css'
 import {logout} from '../actions/auth';
-import {Redirect, Link, withRouter } from 'react-router-dom';
+import {Redirect, Link } from 'react-router-dom';
 
 class Nav extends Component{
 	constructor(props){
@@ -14,7 +14,7 @@ class Nav extends Component{
 	}
 
 	signOut(event){
-		console.log("event fired");
+		//console.log("event fired");
 		event.preventDefault();
 		this.props.logout();
 		this.setState({

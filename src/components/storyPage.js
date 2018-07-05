@@ -1,4 +1,4 @@
-import _ from 'lodash';
+//import _ from 'lodash';
 import './style/storyPage.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -8,15 +8,12 @@ import AppHeader from './appHeader';
 import AppFooter from './appFooter';
 
 class StoryPage extends Component {
-  constructor(props) {
-    super(props);
-    //this.props.fetchAStory(this.props.match.params.story);
-  }
+
   componentDidMount(){
       // console.log(JSON.stringify(this.props.fetchStories()))
-      console.log('params ', this.props.match.params.story);
+      //console.log('params ', this.props.match.params.story);
       this.props.fetchAStory(this.props.match.params.story);
-      console.log('Our... story? ',this.props.ourStory);
+      //console.log('Our... story? ',this.props.ourStory);
       //this.findSelectedStory = this.findSelectedStory.bind(this);
       this.renderMap = this.renderMap.bind(this);
   }
@@ -36,9 +33,9 @@ class StoryPage extends Component {
   }
 
   render(){
-    console.log("Story we are trying to find - this.props.ourStory ", this.props.ourStory);
+    //console.log("Story we are trying to find - this.props.ourStory ", this.props.ourStory);
     const storyResults = this.props.ourStory; // use to be this.findSelectedStory(); . need to uncomment in componentDidMount to revive.
-    console.log('Story found ', storyResults)
+    //console.log('Story found ', storyResults)
     return(
     <div>
       <AppHeader term="" parentComp="form" />
@@ -72,7 +69,7 @@ class StoryPage extends Component {
 <p>{storyResults.location}</p>
 */
 function mapStateToProps(state) {
-  console.log('from the state: ',state.storiesReducer.theStory);
+  //console.log('from the state: ',state.storiesReducer.theStory);
   return { ourStory: state.storiesReducer.theStory };
 }
 

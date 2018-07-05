@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Switch, withRouter, Redirect,BrowserRouter as Router} from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import {Route, Switch, Redirect,BrowserRouter as Router} from 'react-router-dom';
+//import { createStore, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import MyMapTalesDescription from './components/myMapTalesDescription';
 import Dashboard from './components/dashboard';
@@ -12,7 +12,7 @@ import Login from './components/login';
 import SignUp from './components/signUp';
 import './index.css';
 import reducers from './reducers/store';
-import promise from 'redux-promise';
+//import promise from 'redux-promise';
 import { loadAuthToken } from './reducers/local-storage';
 
 //const createStoreWithMiddleware = applyMiddleware(promise)(createStore);

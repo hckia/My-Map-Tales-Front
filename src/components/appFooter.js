@@ -3,7 +3,7 @@ import React from 'react';
 import ModalStory from './modalStory';
 import { connect } from 'react-redux';
 import {login} from '../actions/auth';
-import { loadAuthToken } from '../reducers/local-storage';
+//import { loadAuthToken } from '../reducers/local-storage';
 
 class AppFooter extends React.Component {
 	constructor(props) {

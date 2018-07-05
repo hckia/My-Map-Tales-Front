@@ -5,7 +5,7 @@ import {createStories} from '../actions/index';
 import Input from './input';
 import TextArea from './textarea';
 import Modal from './modal';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import {required, nonEmpty} from '../validators';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 import React, { Component } from 'react';

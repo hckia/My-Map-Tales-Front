@@ -36,7 +36,7 @@ class MyStories extends Component {
     }
 
     renderStories() {
-        var leCount = 0;
+        //var leCount = 0;
         //console.log('length ',this.props.stories);
         return _.map(this.props.stories, story => {
           //console.log(story);

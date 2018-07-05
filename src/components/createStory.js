@@ -1,10 +1,10 @@
 import './style/createStory.css'
 import React, { Component } from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
+//import {Field, reduxForm, focus} from 'redux-form';
+//import Input from './input';
 import StoryForm from './storyForm';
 //import {login} from '../actions/auth';
-import {required, nonEmpty} from '../validators';
+//import {required, nonEmpty} from '../validators';
 import AppHeader from './appHeader';
 import AppFooter from './appFooter';
 import requiresLogin from './requires-login';
@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 
 export class CreateStory extends Component {
     onSubmit(values) {
-    	console.log(values);
+    	//console.log(values);
     	return values;
         //return this.props.dispatch(login(values.username, values.password));
     }

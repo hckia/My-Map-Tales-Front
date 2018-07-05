@@ -6,7 +6,7 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import {Redirect} from 'react-router-dom';
-import { loadAuthToken } from '../reducers/local-storage';
+//import { loadAuthToken } from '../reducers/local-storage';
 import AppHeader from './appHeader';
 import AppFooter from './appFooter';
 import Modal from './modal';
@@ -33,7 +33,7 @@ export class Login extends React.Component {
   }
 
     onSubmit(values) {
-    	console.log(values);
+    	//console.log(values);
         this.props.dispatch(login(values.username, values.password));
     	// this.setState({ loggedInState: true })
     	// console.log('loggedInState ', this.state.loggedInState);

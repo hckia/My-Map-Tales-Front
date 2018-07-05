@@ -4,7 +4,7 @@
 // const API_KEY = '?key=PAPERCLIPZAPERCLIP'
 import {API_BASE_URL} from '../config';
 import {SubmissionError} from 'redux-form';
-import {normalizeResponseErrors} from './utils';
+//import {normalizeResponseErrors} from './utils';
 import {loadAuthToken} from '../reducers/local-storage';
 
 var results = [{
@@ -63,7 +63,7 @@ const fetchStoriesUserSuccess = (userStories) => {
 }
 export const FETCH_A_STORY = 'FETCH_A_STORY';
 const fetchedStoryRetrieved = (theStory) => {
-	console.log('fetchedStoryRetrieved has fired ', theStory);
+	//console.log('fetchedStoryRetrieved has fired ', theStory);
 	return {
 		type: FETCH_A_STORY,
 		payload: theStory
@@ -91,7 +91,7 @@ export const fetchStories = () => dispatch => {
 }
 
 export const fetchAStory = (story) => dispatch => {
-	console.log('fetchAStory has fired')
+//	console.log('fetchAStory has fired')
 	fetch(`${API_BASE_URL}/stories/${story}`, {
 		      method: 'GET',
 					headers: {
@@ -99,11 +99,11 @@ export const fetchAStory = (story) => dispatch => {
 					}
 	})
 	.then(res => {
-		console.log('response ', res);
+		//console.log('response ', res);
 		return res.json();
 	})
 	.then(data =>{
-		console.log('Story found ',data);
+		//console.log('Story found ',data);
 		dispatch(fetchedStoryRetrieved(data));
 	})
 	.catch(err =>{

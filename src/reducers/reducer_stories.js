@@ -1,4 +1,4 @@
-import _ from 'lodash';
+//import _ from 'lodash';
 import { FETCH_A_STORY, FETCH_MY_STORIES, FAILED_STORY, FETCH_STORIES, SEARCH_STORIES, SUCCESS_STORY } from '../actions/index';
 import { FAILED_FROM_AUTH } from '../actions/auth';
 
@@ -40,7 +40,7 @@ export default function StoryReducer(state = initialState, action){
 			userStories: action.payload
 		}
 	case FETCH_A_STORY:
-		console.log('FETCH_A_STORY reducer has fired ', action.payload);
+		//console.log('FETCH_A_STORY reducer has fired ', action.payload);
 		return {
 			...state,
 			theStory: action.payload
