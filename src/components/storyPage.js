@@ -49,7 +49,7 @@ class StoryPage extends Component {
         {this.renderMap(storyResults)}
       </div>
       <div className="story-right-container">
-        <p>Located in {storyResults.location}</p>
+        <p className="details detail-position">Located in {storyResults.location}</p>
       <div className="story-title-container">
       <h2>{storyResults.title}</h2>
       </div>
