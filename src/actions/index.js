@@ -181,14 +181,14 @@ export const createStories = (story, getState) => dispatch => {
 				statusRes = res.status;
 				return res.json()})
 		.then(data => {
-			//console.log('data code: ', data)
-			//console.log('status ', statusRes)
-			// if(statusRes === 201){
-			// 	//console.log("201!!!! ",data);
-			// 	data.message = data.title + " has been posted!";
-			// 	//console.log("new data object ", data);
-			// 	dispatch({type: SUCCESS_STORY, payload: data})
-			// }
+			console.log('data code: ', data)
+			console.log('status ', statusRes)
+			if(statusRes === 201){
+				//console.log("201!!!! ",data);
+				data.message = data.title + " has been posted!";
+				//console.log("new data object ", data);
+				dispatch({type: SUCCESS_STORY, payload: data})
+			}
 			if(data.code === 422){
 				//console.log("422!!!! ", data);
 				dispatch({type: FAILED_STORY, payload: data});
