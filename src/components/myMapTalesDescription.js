@@ -25,7 +25,9 @@ class MyMapTalesDescription extends Component {
                   <Map location={story.location}/>
                 </div>
                 <div className="right-container">
-                  <h2>{story.title}</h2>
+                  <div className="story-title-container">
+                    <h2>{story.title}</h2>
+                  </div>
                   <p>Story Teller: {story.author}</p>
                   <p>Location: {story.location}</p>
                   <p>Date: {story.date}</p>
@@ -46,7 +48,6 @@ class MyMapTalesDescription extends Component {
             <div>
                 <AppHeader term="" parentComp="story" />
                 <div className="description-container">
-                    <h2>Stories</h2>
                     <ul onChange={this.renderStories}>
                         {this.renderStories()}
                     </ul>

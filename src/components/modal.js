@@ -5,6 +5,13 @@ import { connect } from 'react-redux';
 //import {Redirect} from 'react-router-dom';
 
 class Modal extends React.Component {
+
+  checkStories(feedback){
+    if(feedback){
+      return feedback
+    }
+    return "Loading Results. You should see them render Shortly in the background. Feel free to close this out once they do..."
+  }
   render() {
     // Render nothing if the "show" prop is false
     if(!this.props.show) {
@@ -23,7 +30,7 @@ class Modal extends React.Component {
 
     // The modal "window"
     const modalStyle = {
-      backgroundColor: '#fff',
+      backgroundColor: '#d9d1ba',
       borderRadius: 5,
       maxWidth: 500,
       minHeight: 300,
@@ -31,14 +38,21 @@ class Modal extends React.Component {
       padding: 30
     };
 
+    const bottomSpace = {
+      "marginTop": "15px"
+    };
+
+    const resultText ={
+      "fontSize": "20px"
+    }
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
           {this.props.children}
-          {this.props.feedback}
+          <p style={resultText}>{this.checkStories(this.props.feedback)}</p>
           <div className="footer">
-            <button onClick={this.props.onClose}>
-              Close
+            <button className="btn btn-4 btn-4a icon-arrow-right" style={bottomSpace} onClick={this.props.onClose}>
+              Okay, Thanks!
             </button>
           </div>
         </div>

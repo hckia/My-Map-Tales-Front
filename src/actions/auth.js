@@ -42,6 +42,7 @@ const storeAuthInfo = (authToken, dispatch) => {
     saveAuthToken(authToken);
 };
 
+export const FAILED_FROM_AUTH = 'FAILED_FROM_AUTH';
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (
@@ -61,19 +62,24 @@ export const login = (username, password) => dispatch => {
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
             .catch(err => {
-                const {code} = err;
-                const message =
-                    code === 401
-                        ? 'Incorrect username or password'
-                        : 'Unable to login, please try again';
-                dispatch(authError(err));
+                console.log("this is the authError ", err);
+                console.log("its code ", err.code);
+                // const {code} = err;
+                // const message =
+                //     code === 401
+                //         ? 'Incorrect username or password'
+                //         : 'Unable to login, please try again';
+                // dispatch(authError(err));
+                err.message = 'Invalid username or password. Please try again or sign up!'
+                dispatch({type: FAILED_FROM_AUTH, payload: err});
                 // Could not authenticate, so return a SubmissionError for Redux
                 // Form
-                return Promise.reject(
-                    new SubmissionError({
-                        _error: message
-                    })
-                );
+                // return Promise.reject(
+                //     new SubmissionError({
+                //         //_error: message
+                //         _error:'Unable to login, please try again'
+                //     })
+                // );
             })
     );
 };

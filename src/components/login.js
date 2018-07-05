@@ -9,6 +9,7 @@ import {Redirect} from 'react-router-dom';
 import { loadAuthToken } from '../reducers/local-storage';
 import AppHeader from './appHeader';
 import AppFooter from './appFooter';
+import Modal from './modal';
 
 export class Login extends React.Component {
 	constructor(props){
@@ -17,8 +18,19 @@ export class Login extends React.Component {
 		// 	loggedInState: false
 		// }
 		//console.log(this.props.loggedIn);
+		this.toggleModal = this.toggleModal.bind(this);
+		this.state = {
+      isOpen: false
+    };
 	}
 
+	toggleModal(){
+    //console.log("toggleModal fired ")
+   // console.log("this.props.feedback ", this.props.feedback.message)
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
     onSubmit(values) {
     	console.log(values);
@@ -66,11 +78,14 @@ export class Login extends React.Component {
 		                    id="password"
 		                    validate={[required, nonEmpty]}
 		                />
-		                <button disabled={this.props.pristine || this.props.submitting}>
+		                <button disabled={this.props.pristine || this.props.submitting} onClick={this.toggleModal}>
 		                    Log in
 		                </button>
 		            </form>
 	            </div>
+							<Modal show={this.state.isOpen}
+	              onClose={this.toggleModal}>
+	            </Modal>
                 <AppFooter />
 	        </div>
         );
