@@ -28,7 +28,7 @@ body {
   flex-direction: column;
   margin: 0;
   background: #f6f6f6;
-  background-image: url("./imgs/cartographer_map.jpg");
+  /*background-image: url("./imgs/cartographer_map.jpg");*/
   background-attachment: fixed;
   background-position: center;
 }
