@@ -63,6 +63,7 @@ a:visited {
 	.list-group-item {
 	  height: 400px;
 	  box-shadow:0 0 40px -10px #000;
+    margin-bottom: 80px;
 	}
 
 	.list-group-item:hover {
@@ -211,6 +212,7 @@ a:visited {
 
 	.list-group-item {
 	  height: 400px;
+    margin-bottom: 80px;
 	  box-shadow:0 0 40px -10px #000;
 	}
 
@@ -358,6 +360,7 @@ a:visited {
 
 	.list-group-item {
 	  height: 600px;
+    margin-bottom: 80px;
 	  box-shadow:0 0 40px -10px #000;
     /* margin-left: -20px; */
 	}
