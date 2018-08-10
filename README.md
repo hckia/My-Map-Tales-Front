@@ -29,7 +29,3 @@ Once you're logged in you'll see a few new option under 'Menu' - Dashboard, My S
 Create a Story is where you can share tales of your home, travels... Any place really!
 
 My stories is where you can see stories you've created under the user you're logged in as!
-
-## Demo user
-
-Not interested in signing up? The Login demo below will take you to a user demo
