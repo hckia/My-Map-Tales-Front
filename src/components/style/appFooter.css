@@ -10,52 +10,59 @@
 @media screen and (min-width: 1024px) {
 
 	.button-container-left{
+		 margin-left: 25%;
 		 display: inline-block;
- 		 width: 50%;
+ 		 width: 25%;
 	}
 
 	.button-container{
-		margin: auto;
+		margin: 0 auto;
 		width: 50%;
 	}
 
 	.button-container-right{
 		 display: inline-block;
- 		 width: 50%;
+ 		 width: 25%;
 	}
 
 }
 
 @media screen and (max-width: 1024px) and (min-width: 420px) {
 
-	.button-container{
-		margin: auto;
-		width: 50%;
-	}
 	.button-container-left{
+		 margin-left: 25%;
 		 display: inline-block;
-		width: 50%;
+ 		 width: 25%;
+	}
+
+	.button-container{
+		margin: 0 auto;
+		width: 60%;
 	}
 
 	.button-container-right{
 		 display: inline-block;
-		width: 50%;
+ 		 width: 25%;
 	}
+
 }
 
 @media screen and (max-width: 420px){
 
-	.button-container{
-		margin: auto;
-		width: 50%;
-	}
 	.button-container-left{
+		 margin-left: 25%;
 		 display: inline-block;
-		width: 50%;
+ 		 width: 25%;
+	}
+
+	.button-container{
+		margin: 0 auto;
+		width: 90%;
 	}
 
 	.button-container-right{
 		 display: inline-block;
-		width: 50%;
+ 		 width: 25%;
 	}
+
 }

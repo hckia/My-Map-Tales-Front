@@ -102,7 +102,7 @@ a:visited {
 	}
 
 	#story-description > p {
-	  padding: 0px 150px 0px 150px;
+	  padding: 350px 150px 0px 150px;
 	}
 
 
@@ -250,7 +250,7 @@ a:visited {
 	}
 
 	#story-description > p {
-	  padding: 0px 150px 0px 150px;
+	  padding: 350px 20px 10px 10px;
 	}
 
   .btn {
@@ -356,11 +356,6 @@ a:visited {
 		display: inline-block;
 	}
 
-  /* .dashboard-container {
-		margin: 20vh 0vw 20vh 0vw;
-    display: inline-block;
-  } */
-
 	.list-group-item {
 	  height: 600px;
 	  box-shadow:0 0 40px -10px #000;
@@ -402,7 +397,7 @@ a:visited {
 	}
 
 	#story-description > p {
-	  padding: 0px 40px 0px 40px;
+	  padding: 0px 10px 0px 40px;
 	}
 
   .btn {
