@@ -36,12 +36,12 @@ class AppFooter extends React.Component {
 					<div className="button-container">
 						<div className="button-container-left">
 							<button disabled={this.props.loggedIn} className="btn btn-4 btn-4a icon-arrow-right" onClick={() => this.loginDemo()}>
-								Login Demo
+								Demo
 							</button>
 						</div>
 					<div className="button-container-right">
 						<button className="btn btn-4 btn-4a icon-arrow-right" onClick={this.toggleModal}>
-							About this App
+							About
 						</button>
 						<ModalStory show={this.state.isOpen}
               onClose={this.toggleModal}>
