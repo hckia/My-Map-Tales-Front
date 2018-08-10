@@ -7,9 +7,9 @@ a {
 @media screen and (min-width: 1024px) {
 
   .single-description-container{
-    margin: 20vh 10vw 20vh 10vw;
-  	display: inline-block;
-  	width: 80vw;
+    margin: 0 auto;
+    margin-top: 120px;
+  	width: 80%;
     background-attachment: fixed;
     background-position: center;
     margin-bottom: 105px;
@@ -113,10 +113,12 @@ a {
 /*design for 420 */
 @media screen and (max-width: 1024px) and (min-width: 420px) {
 .single-description-container{
-  margin: 20vh 10vw 20vh 10vw;
+  margin: 0 auto;
+  margin-top: 120px;
+  margin-right: 40px;
+  margin-left: 40px;
 	display: inline-block;
-	width: 80vw;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
   margin-bottom: 105px;
 }
@@ -205,7 +207,7 @@ a {
 
 @media screen and (max-width: 420px){
   .single-description-container{
-    margin-top: 20vh;
+    margin-top: 120px;
   	display: inline-block;
   	width: 100vw;
     background-attachment: fixed;

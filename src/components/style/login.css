@@ -1,25 +1,30 @@
 /*design for 1024 */
 @media screen and (min-width: 1024px) {
 	.login-container{
-		margin: 20vh 20vw 20vh 20vw;
-		display: inline-block;
-		width: 40vw;
+		margin-top: 120px;
+    margin-right: 20%;
+		margin-left: 20%;
+		margin-bottom: 80px;
 	}
 }
 
 /*design for 420 */
 @media screen and (max-width: 1024px) and (min-width: 420px) {
 	.login-container{
-		margin: 20vh 15vw 20vh 15vw;
+		margin: 0 auto;
+		margin-top: 120px;
 		display: inline-block;
-		width: 70vw;
+		width: 80%;
+		margin-left: 10%;
 	}
 }
 
 @media screen and (max-width: 420px){
 	.login-container{
-		margin: 20vh 3vw 20vh 3vw;
+		margin: 0 auto;
+		margin-top: 120px;
 		display: inline-block;
-		width: 94vw;
+		width: 90%;
+		margin-left: 5%;
 	}
 }

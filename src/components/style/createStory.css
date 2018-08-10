@@ -6,25 +6,29 @@
 
 @media screen and (min-width: 1024px) {
 	.story-container {
-		margin: 20vh 20vw 20vh 20vw;
-		display: inline-block;
-		width: 50vw;
+		margin-top: 120px;
+    margin-right: 40px;
+		margin-left: 40px;
 	}
 }
 
 /*design for 420 */
 @media screen and (max-width: 1024px) and (min-width: 420px) {
 	.story-container {
-		margin: 20vh 10vw 20vh 10vw;
+		margin: 0 auto;
+		margin-top: 120px;
 		display: inline-block;
-		width: 80vw;
+		width: 80%;
+		margin-left: 10%;
 	}
 }
 
 @media screen and (max-width: 420px){
 	.story-container {
-		margin: 20vh 5vw 20vh 5vw;
+		margin: 0 auto;
+		margin-top: 120px;
 		display: inline-block;
-		width: 90vw;
+		width: 80%;
+		margin-left: 10%;
 	}
 }
